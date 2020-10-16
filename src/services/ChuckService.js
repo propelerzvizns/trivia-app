@@ -1,5 +1,20 @@
-export default class ChuckService{
+const Chuck  = require('chucknorris-io');
+      
+class ChuckService{
+    // U servis ChuckService importovati ovaj paket i napraviti metodu getRandomJoke
+    constructor(){
+        this.client = new Chuck();
+    
+    }
+    async getRandomJoke(){
+        const joke = await this.client.getRandomJoke();
+        return joke
+    }
+    
+    
+   
 
 }
 
-export const chuckService = new ChuckService();
+const chuckService = new ChuckService();
+export default chuckService;
